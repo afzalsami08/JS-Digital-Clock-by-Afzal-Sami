@@ -85,7 +85,7 @@ function clock() {
     } else if(d >= 16 && d < 21) {
         l.innerHTML = 'Evening';
         m.style.color = l.style.color = '#ff8000';
-    } else if(d >= 21 && d < 5) {
+    } else if(d >= 21 || d < 5) {
         l.innerHTML = 'Night';
         m.style.color = l.style.color = '#f00';
     } else {
