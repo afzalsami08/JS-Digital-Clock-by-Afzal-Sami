@@ -45,12 +45,10 @@ function clock() {
 
     // Value Area
 
-    if(
-        d > 12
-    ) {
-        document.getElementById('am_pm').innerHTML = 'PM';
-    } else {
+    if(d < 12) {
         document.getElementById('am_pm').innerHTML = 'AM';
+    } else {
+        document.getElementById('am_pm').innerHTML = 'PM';
     }
 
     // Date Area
@@ -65,9 +63,9 @@ function clock() {
 
     var j = a.getMonth();
 
-    j = (j < 10) ? '0' + j : j;
+    var k = ['Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec'];
 
-    document.getElementById('month').innerHTML = j;
+    document.getElementById('month').innerHTML = k[j];
 
     // Year Area
 
@@ -75,22 +73,23 @@ function clock() {
 
     // Greeting Area
 
-    var k = document.getElementById('greeting');
+    var l = document.getElementById('greeting');
+    var m = document.getElementById('good');
 
-    if(d > 5 && d < 11) {
-        k.innerHTML = 'Morning';
-        k.style.color = '#0080ff';
-    } else if(d > 11 && d < 16) {
-        k.innerHTML = 'Afternoon';
-        k.style.color = '#ffff00';
-    } else if(d > 16 && d < 21) {
-        k.innerHTML = 'Evening';
-        k.style.color = '#ff8000';
-    } else if(d > 21 || d < 5) {
-        k.innerHTML = 'Night';
-        k.style.color = '#f00';
+    if(d >= 5 && d < 11) {
+        l.innerHTML = 'Morning';
+        m.style.color = l.style.color = '#0080ff';
+    } else if(d >= 11 && d < 16) {
+        l.innerHTML = 'Afternoon';
+        m.style.color = l.style.color = '#ffff00';
+    } else if(d >= 16 && d < 21) {
+        l.innerHTML = 'Evening';
+        m.style.color = l.style.color = '#ff8000';
+    } else if(d >= 21 && d < 5) {
+        l.innerHTML = 'Night';
+        m.style.color = l.style.color = '#f00';
     } else {
-        k.innerHTML = 'invalid';
+        l.innerHTML = 'invalid';
     }
 
 } setInterval(clock , 0);
