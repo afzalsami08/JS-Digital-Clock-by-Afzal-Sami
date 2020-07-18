@@ -1,95 +1,96 @@
-function clock() {
+setInterval(
+    function clock() {
 
-    var a = new Date();
+        var a = new Date();
 
-    // Day Area
+        // Day Area
 
-    var b = a.getDay();
+        var b = a.getDay();
 
-    var c = ['Sun' , 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat']
+        var c = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-    document.getElementById('day').innerHTML = c[b];
+        document.getElementById('day').innerHTML = c[b];
 
-    // Hour Area 
+        // Hour Area 
 
-    var d = a.getHours();
+        var d = a.getHours();
 
-    var e = document.getElementById('hour');
+        var e = document.getElementById('hour');
 
-    var f = a.getHours() - 12;
+        var f = a.getHours() - 12;
 
-    d = (d < 10) ? '0' + d : d;
-    f = (f < 10) ? '0' + f : f;
+        d = (d < 10) ? '0' + d : d;
+        f = (f < 10) ? '0' + f : f;
 
-    if(d > 12) {
-        e.innerHTML = f;
-    } else {
-        e.innerHTML = d;
-    }
+        if (d > 12) {
+            e.innerHTML = f;
+        } else {
+            e.innerHTML = d;
+        }
 
-    // Minutes Area 
+        // Minutes Area 
 
-    var g = a.getMinutes();
+        var g = a.getMinutes();
 
-    g = (g < 10) ? '0' + g : g;
+        g = (g < 10) ? '0' + g : g;
 
-    document.getElementById('minute').innerHTML = g;
+        document.getElementById('minute').innerHTML = g;
 
-    // Seconds Area 
+        // Seconds Area 
 
-    var h = a.getSeconds();
+        var h = a.getSeconds();
 
-    h = (h < 10) ? '0' + h : h;
+        h = (h < 10) ? '0' + h : h;
 
-    document.getElementById('second').innerHTML = h;
+        document.getElementById('second').innerHTML = h;
 
-    // Value Area
+        // Value Area
 
-    if(d < 12) {
-        document.getElementById('am_pm').innerHTML = 'AM';
-    } else {
-        document.getElementById('am_pm').innerHTML = 'PM';
-    }
+        if (d < 12) {
+            document.getElementById('am_pm').innerHTML = 'AM';
+        } else {
+            document.getElementById('am_pm').innerHTML = 'PM';
+        }
 
-    // Date Area
+        // Date Area
 
-    var i = a.getDate();
+        var i = a.getDate();
 
-    i = (i < 10) ? '0' + i : i;
+        i = (i < 10) ? '0' + i : i;
 
-    document.getElementById('date').innerHTML = i;
+        document.getElementById('date').innerHTML = i;
 
-    // Month Area
+        // Month Area
 
-    var j = a.getMonth();
+        var j = a.getMonth();
 
-    var k = ['Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec'];
+        var k = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    document.getElementById('month').innerHTML = k[j];
+        document.getElementById('month').innerHTML = k[j];
 
-    // Year Area
+        // Year Area
 
-    document.getElementById('year').innerHTML = a.getFullYear();
+        document.getElementById('year').innerHTML = a.getFullYear();
 
-    // Greeting Area
+        // Greeting Area
 
-    var l = document.getElementById('greeting');
-    var m = document.getElementById('good');
+        var l = document.getElementById('greeting');
+        var m = document.getElementById('good');
 
-    if(d >= 5 && d < 11) {
-        l.innerHTML = 'Morning';
-        m.style.color = l.style.color = '#0080ff';
-    } else if(d >= 11 && d < 16) {
-        l.innerHTML = 'Afternoon';
-        m.style.color = l.style.color = '#ffff00';
-    } else if(d >= 16 && d < 21) {
-        l.innerHTML = 'Evening';
-        m.style.color = l.style.color = '#ff8000';
-    } else if(d >= 21 || d < 5) {
-        l.innerHTML = 'Night';
-        m.style.color = l.style.color = '#f00';
-    } else {
-        l.innerHTML = 'invalid';
-    }
+        if (d >= 5 && d < 11) {
+            l.innerHTML = 'Morning';
+            m.style.color = l.style.color = '#0080ff';
+        } else if (d >= 11 && d < 16) {
+            l.innerHTML = 'Afternoon';
+            m.style.color = l.style.color = '#ffff00';
+        } else if (d >= 16 && d < 21) {
+            l.innerHTML = 'Evening';
+            m.style.color = l.style.color = '#ff8000';
+        } else if (d >= 21 || d < 5) {
+            l.innerHTML = 'Night';
+            m.style.color = l.style.color = '#f00';
+        } else {
+            l.innerHTML = 'invalid';
+        }
 
-} setInterval(clock , 0);
+    }, 0);
