@@ -1,5 +1,5 @@
 setInterval(
-    function clock() {
+    () => {
 
         var a = new Date();
 
@@ -93,4 +93,5 @@ setInterval(
             l.innerHTML = 'invalid';
         }
 
-    }, 0);
+    }
+);
